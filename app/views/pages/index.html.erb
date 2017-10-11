@@ -1,0 +1,29 @@
+<h1>Cats</h1>
+<% @cats.each do |cat| %>
+  <h2>Name:</h2>
+  <%= cat.name %>
+<% end %>
+<h1>Users</h1>
+<% @users.each do |user| %>
+  <h2>Name:</h2>
+  <%= user.name %>
+  <h2>Email:</h2>
+  <%= user.email %>
+  <h2>Age:</h2>
+  <%= user.age %>
+<% end %>
+<h1>Todos</h1>
+<% @todos.each do |todo| %>
+  <h2>Task:</h2>
+  <%= todo.tasks %>
+  <h2>Finished:</h2>
+  <%= todo.finished %>
+<% end %>
+<h1>Make Todos</h1>
+<%= form_for :todo, url: create_path do |f| %>
+  <p> Task </p>
+  <%= f.text_field :tasks %>
+  <p> Finished </p>
+  <%= f.text_field :finished %>
+  <%= f.submit "Create" %>
+<% end %>
